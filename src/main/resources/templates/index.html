@@ -13,8 +13,19 @@
     <a th:href="@{/add(nombre='Festival en el centro')}">Festival en el centro</a><br/>
     <a th:href="@{/add(nombre='Ir al cine')}">Ir al cine</a>
     <h1>Lista de eventos</h1>
-    <ul th:each="e : ${eventos}">
-        <li th:text="${e.nombre}"></li>
-    </ul>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Borrar</th>
+        </tr>
+        <tr th:each="e, iterador : ${eventos}">
+            <td th:text="${iterador.index+1}"></td>
+            <td th:text="${e.nombre}"></td>
+            <td th:text="${e.completada}"></td>
+            <td><a th:href="@{/delete/{id}(id=${e.id})}"><button>Eliminar</button></a></td>
+        </tr>
+    </table>
 </body>
 </html>

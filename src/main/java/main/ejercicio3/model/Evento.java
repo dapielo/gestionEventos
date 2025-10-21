@@ -3,12 +3,12 @@ package main.ejercicio3.model;
 public class Evento {
     private int id;
     private String nombre;
-    private boolean estado;
+    private boolean completada;
 
-    public Evento(int id, String nombre, boolean estado) {
+    public Evento(int id, String nombre, boolean completada) {
         this.id = id;
         this.nombre = nombre;
-        this.estado = estado;
+        this.completada = completada;
     }
 
     public int getId() {
@@ -27,12 +27,12 @@ public class Evento {
         this.nombre = nombre;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public boolean isCompletada() {
+        return completada;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setCompletada(boolean completada) {
+        this.completada = completada;
     }
 
 }
