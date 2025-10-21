@@ -21,7 +21,7 @@
             <th>Borrar</th>
             <th>Cambiar estado</th>
         </tr>
-        <tr th:each="e, iterador : ${eventos}">
+        <tr th:each="e,iterador : ${eventos}" th:class="${e.completada}?'tr_completada':'tr_pendiente'">
             <td th:text="${iterador.index+1}"></td>
             <td th:text="${e.nombre}"></td>
             <td th:text="${e.completada}?'Completada':'Pendiente'"></td>

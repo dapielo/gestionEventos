@@ -1,0 +1,27 @@
+body{
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+table{
+    justify-self: center;
+    width: 70%;
+    border-collapse: collapse;
+}
+td{
+    width: 20%;
+}
+th{
+    width: 20%;
+    background-color: rgb(186, 244, 236);
+}
+tr{
+    border-bottom:1px solid black;
+    height: 50px;
+}
+.tr_completada{
+    background-color: rgb(198, 250, 198);
+}
+.tr_pendiente{
+    background-color: rgb(249, 183, 183);
+}
