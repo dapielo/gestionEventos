@@ -7,6 +7,11 @@
     <title>Ejercicio 3</title>
 </head>
 <body>
+    <h1>Eventos posibles</h1>
+    <a th:href="@{/add(nombre='Cumpleaños de un amigo')}">Cumpleaños de un amigo</a><br/>
+    <a th:href="@{/add(nombre='Fiesta de disfraces')}">Fiesta de disfraces</a><br/>
+    <a th:href="@{/add(nombre='Festival en el centro')}">Festival en el centro</a><br/>
+    <a th:href="@{/add(nombre='Ir al cine')}">Ir al cine</a>
     <h1>Lista de eventos</h1>
     <ul th:each="e : ${eventos}">
         <li th:text="${e.nombre}"></li>
