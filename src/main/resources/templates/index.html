@@ -19,12 +19,14 @@
             <th>Nombre</th>
             <th>Estado</th>
             <th>Borrar</th>
+            <th>Cambiar estado</th>
         </tr>
         <tr th:each="e, iterador : ${eventos}">
             <td th:text="${iterador.index+1}"></td>
             <td th:text="${e.nombre}"></td>
-            <td th:text="${e.completada}"></td>
+            <td th:text="${e.completada}?'Completada':'Pendiente'"></td>
             <td><a th:href="@{/delete/{id}(id=${e.id})}"><button>Eliminar</button></a></td>
+            <td><a th:href="@{toggle/{id}(id=${e.id})}"><button>Cambiar</button></a></td>
         </tr>
     </table>
 </body>

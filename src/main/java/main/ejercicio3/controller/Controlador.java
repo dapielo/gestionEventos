@@ -31,5 +31,14 @@ public class Controlador {
         return "redirect:/";
     }
 
-
+    @GetMapping("/toggle/{id}")
+    public String cambiarEstado(@PathVariable int id){
+        eventos.stream()
+        .filter(e -> e.getId()==id)
+        .findFirst()
+        .ifPresent(e -> {
+            e.setCompletada(!e.isCompletada());
+        });
+        return "redirect:/";
+    }
 }
