@@ -12,7 +12,26 @@
     <a th:href="@{/add(nombre='Fiesta de disfraces')}">Fiesta de disfraces</a><br/>
     <a th:href="@{/add(nombre='Festival en el centro')}">Festival en el centro</a><br/>
     <a th:href="@{/add(nombre='Ir al cine')}">Ir al cine</a>
+    <form th:action="@{/}" method="get">
+        <h2>Filtros de busqueda</h2>
+        <p>
+            <input type="radio" name="completadas" value="true" id="completados_radio">
+            <label for="completados_radio">Filtar por completados</label>
+        </p>
+        <p>
+            <input type="radio" name="completadas" value="false" id="no_completados_radio">
+            <label for="no_completados_radio">Filtar por no completados</label>
+        </p>
+        <p>
+            <label for="filtro_nombre">Filtrar por nombre</label><br/>
+            <input type="text" id="filtro_nombre" name="filtro" placeholder="Introduce parte del nombre...">
+        </p>
+        <div id="contenedor_submit">
+            <button type="submit">Aceptar</button>
+        </div>
+    </form>
     <h1>Lista de eventos</h1>
+    <div id="campo_mensaje" th:if="${mensaje!=null}" th:text="${mensaje}"></div>
     <table>
         <tr>
             <th>ID</th>

@@ -13,15 +13,41 @@ td{
 }
 th{
     width: 20%;
-    background-color: rgb(186, 244, 236);
+    background-color: rgb(72, 98, 247);
+    color: white;
 }
 tr{
     border-bottom:1px solid black;
     height: 50px;
 }
 .tr_completada{
-    background-color: rgb(198, 250, 198);
+    background-color: rgb(192, 248, 192);
 }
-.tr_pendiente{
-    background-color: rgb(249, 183, 183);
+#campo_mensaje{
+    justify-self: center;
+    background-color: rgb(250, 216, 129);
+    padding: 20px 0px;
+    border-radius:15px;
+    margin: 20px;
+    width: 70%;
+}
+#filtro_nombre{
+    width: 200px;
+}
+p{
+    justify-self: center;
+    width: 600px;
+}
+h2{
+    margin-top:70px;
+}
+form{
+    margin-bottom: 70px;
+}
+button{
+    justify-self: center;
+    padding:10px 50px;
+}
+#contenedor_submit{
+    justify-content: center;
 }
