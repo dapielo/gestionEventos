@@ -1,21 +1,31 @@
 package main.ejercicio3.model;
 
 public class Evento {
-    private int id;
+    private Integer id;
     private String nombre;
     private boolean completada;
+    private String rutaCartel;
 
-    public Evento(int id, String nombre, boolean completada) {
+    public String getRutaCartel() {
+        return rutaCartel;
+    }
+
+    public void setRutaCartel(String rutaCartel) {
+        this.rutaCartel = rutaCartel;
+    }
+
+    public Evento(Integer id, String nombre, boolean completada, String rutaCartel) {
         this.id = id;
         this.nombre = nombre;
         this.completada = completada;
+        this.rutaCartel = rutaCartel;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

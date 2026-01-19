@@ -7,45 +7,51 @@
     <title>Ejercicio 3</title>
 </head>
 <body>
-    <h1>Eventos posibles</h1>
-    <a th:href="@{/add(nombre='Cumpleaños de un amigo')}">Cumpleaños de un amigo</a><br/>
-    <a th:href="@{/add(nombre='Fiesta de disfraces')}">Fiesta de disfraces</a><br/>
-    <a th:href="@{/add(nombre='Festival en el centro')}">Festival en el centro</a><br/>
-    <a th:href="@{/add(nombre='Ir al cine')}">Ir al cine</a>
-    <form th:action="@{/}" method="get">
+    <h1>EVENTOS</h1>
+    <a th:href="@{/agregar}"><button>Añadir Evento</button></a>
+    <form th:action="@{/}" method="get" th:object="${filtroForm}">
         <h2>Filtros de busqueda</h2>
         <p>
-            <input type="radio" name="completadas" value="true" id="completados_radio">
-            <label for="completados_radio">Filtar por completados</label>
-        </p>
-        <p>
-            <input type="radio" name="completadas" value="false" id="no_completados_radio">
-            <label for="no_completados_radio">Filtar por no completados</label>
-        </p>
-        <p>
             <label for="filtro_nombre">Filtrar por nombre</label><br/>
-            <input type="text" id="filtro_nombre" name="filtro" placeholder="Introduce parte del nombre...">
+            <input type="text" id="filtro_nombre" name="filtro" placeholder="Introduce parte del nombre..." th:field="*{filtro}">
+        </p>
+        <p>
+            <input type="radio" name="completadas" value="true" id="completados_radio" th:field="*{completadas}">
+            <label for="completados_radio">Completados</label>
+        </p>
+        <p>
+            <input type="radio" name="completadas" value="false" id="no_completados_radio" th:field="*{completadas}">
+            <label for="no_completados_radio">No completados</label>
         </p>
         <div id="contenedor_submit">
-            <button type="submit">Aceptar</button>
+            <button type="submit" class="button">Aceptar</button>
+            <a th:href="@{/}" class="button">Borrar Filtros</a>
         </div>
     </form>
     <h1>Lista de eventos</h1>
-    <div id="campo_mensaje" th:if="${mensaje!=null}" th:text="${mensaje}"></div>
+    <div th:if="${mensaje_error}" th:text="${mensaje_error}" class="mensaje mensaje_error"></div>
+    <div th:if="${mensaje_confirmacion}" th:text="${mensaje_confirmacion}" class="mensaje mensaje_confirmacion"></div>
     <table>
         <tr>
             <th>ID</th>
+            <th>Cartel</th>
             <th>Nombre</th>
             <th>Estado</th>
             <th>Borrar</th>
             <th>Cambiar estado</th>
+            <th>Editar</th>
         </tr>
         <tr th:each="e,iterador : ${eventos}" th:class="${e.completada}?'tr_completada':'tr_pendiente'">
             <td th:text="${iterador.index+1}"></td>
+            <td>
+                <img th:if="${e.rutaCartel!=null}" th:src="@{/carteles/{rutaCartel}(rutaCartel=${e.rutaCartel})}" alt="Cartel" style="max-width: 75px; max-height: 75px;">
+                <span th:unless="${e.rutaCartel!=null}">Sin cartel</span>
+            </td>
             <td th:text="${e.nombre}"></td>
             <td th:text="${e.completada}?'Completada':'Pendiente'"></td>
             <td><a th:href="@{/delete/{id}(id=${e.id})}"><button>Eliminar</button></a></td>
-            <td><a th:href="@{toggle/{id}(id=${e.id})}"><button>Cambiar</button></a></td>
+            <td><a th:href="@{/toggle/{id}(id=${e.id})}"><button>Cambiar</button></a></td>
+            <td><a th:href="@{/editar/{id}(id=${e.id})}"><button>Editar</button></a></td>
         </tr>
     </table>
 </body>
