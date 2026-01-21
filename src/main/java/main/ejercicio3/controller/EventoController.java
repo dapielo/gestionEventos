@@ -13,9 +13,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import jakarta.validation.Valid;
 import main.ejercicio3.exceptions.CartelException;
 import main.ejercicio3.exceptions.EventoException;
+import main.ejercicio3.form.EventoForm;
+import main.ejercicio3.form.FiltroForm;
 import main.ejercicio3.model.Evento;
-import main.ejercicio3.model.EventoForm;
-import main.ejercicio3.model.FiltroForm;
 import main.ejercicio3.service.EventoService;
 import main.ejercicio3.util.EventoMapper;
 

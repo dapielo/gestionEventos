@@ -1,10 +1,11 @@
-package main.ejercicio3;
+package main.ejercicio3.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import main.ejercicio3.model.EventoForm;
+
+import main.ejercicio3.form.EventoForm;
 import main.ejercicio3.service.EventoService;
 
 @Component

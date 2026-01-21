@@ -1,4 +1,4 @@
-package main.ejercicio3.model;
+package main.ejercicio3.form;
 
 import org.springframework.web.multipart.MultipartFile;
 import jakarta.validation.constraints.NotBlank;

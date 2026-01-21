@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import main.ejercicio3.exceptions.CartelException;
 import main.ejercicio3.exceptions.EventoException;
+import main.ejercicio3.form.EventoForm;
 import main.ejercicio3.model.Evento;
-import main.ejercicio3.model.EventoForm;
 
 @Service
 @Qualifier("memory")

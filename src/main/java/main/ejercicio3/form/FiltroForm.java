@@ -1,4 +1,4 @@
-package main.ejercicio3.model;
+package main.ejercicio3.form;
 
 public class FiltroForm {
     private String filtro;

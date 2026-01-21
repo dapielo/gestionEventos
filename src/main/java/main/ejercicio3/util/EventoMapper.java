@@ -1,7 +1,7 @@
 package main.ejercicio3.util;
 
+import main.ejercicio3.form.EventoForm;
 import main.ejercicio3.model.Evento;
-import main.ejercicio3.model.EventoForm;
 
 public class EventoMapper {
 
